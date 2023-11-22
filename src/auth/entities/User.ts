@@ -13,14 +13,14 @@ export class User {
 
   constructor(user: { email: string; password: string }) {
     this.email = user?.email;
-    this.password = this.encrypt(user?.email, user?.password);
+    this.password = User.encryptPassword(user?.email, user?.password);
   }
 
-  encrypt(email: string, password: string) {
+  static encryptPassword(email: string, password: string) {
     return btoa(`${email}:${password}`);
   }
 
-  decrypt(hash: string) {
+  static decryptPassword(hash: string) {
     return atob(hash);
   }
 }
