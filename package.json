@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "postgres:up": "docker run --name db -e POSTGRES_PASSWORD=dbpassword -e POSTGRES_USER=dbuser -e POSTGRES_DB=dbpostgres -p 5432:5432 -d postgres:alpine"
+    "postgres:up": "docker run --name db --rm -e POSTGRES_PASSWORD=dbpassword -e POSTGRES_USER=dbuser -e POSTGRES_DB=dbpostgres -p 5432:5432 postgres:alpine",
+    "typeorm": "typeorm"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
