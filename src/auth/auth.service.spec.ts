@@ -1,5 +1,6 @@
 import { AuthService } from './auth.service';
-import { User } from './entities/User';
+import { User } from './entities/user.entity';
+import { AuthEncrypt } from './utils/auth-encrypt';
 
 const repositoryMock = {
   findOne: jest.fn(),
@@ -37,7 +38,7 @@ describe('AuthService', () => {
 
       repositoryMock.findOne.mockResolvedValue({
         email,
-        password: User.encryptPassword(email, password),
+        password: AuthEncrypt.encryptPassword(email, password),
       });
 
       let errorMessage;
@@ -61,7 +62,7 @@ describe('AuthService', () => {
 
       repositoryMock.findOne.mockResolvedValue({
         email,
-        password: User.encryptPassword(email, password),
+        password: AuthEncrypt.encryptPassword(email, password),
       });
 
       let errorMessage;
@@ -85,7 +86,7 @@ describe('AuthService', () => {
 
       repositoryMock.findOne.mockResolvedValue({
         email,
-        password: User.encryptPassword(email, password),
+        password: AuthEncrypt.encryptPassword(email, password),
       });
 
       const response = await service.login(

@@ -2,6 +2,7 @@ import { HttpException, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
+import { AuthEncrypt } from './utils/auth-encrypt';
 
 @Injectable()
 export class AuthService {
@@ -28,8 +29,8 @@ export class AuthService {
   }
 
   async tokenMatchesUser(token: string): Promise<boolean> {
-    const email = User.getUserFromDecryptedToken(
-      User.decryptPassword(token),
+    const email = AuthEncrypt.getUserFromDecryptedToken(
+      AuthEncrypt.decryptPassword(token),
     ).email;
 
     const found = await this.repository.findOne({
