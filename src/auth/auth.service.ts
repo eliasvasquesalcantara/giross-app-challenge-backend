@@ -26,4 +26,16 @@ export class AuthService {
 
     return true;
   }
+
+  async tokenMatchesUser(token: string): Promise<boolean> {
+    const email = User.getUserFromDecryptedToken(
+      User.decryptPassword(token),
+    ).email;
+
+    const found = await this.repository.findOne({
+      where: { email, password: token },
+    });
+
+    return Boolean(found);
+  }
 }

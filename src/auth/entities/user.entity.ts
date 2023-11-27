@@ -23,4 +23,11 @@ export class User {
   static decryptPassword(hash: string) {
     return atob(hash);
   }
+
+  static getUserFromDecryptedToken(decryptedToken: string): User {
+    return new User({
+      email: decryptedToken.split(':')[0],
+      password: decryptedToken.split(':')[0],
+    });
+  }
 }
