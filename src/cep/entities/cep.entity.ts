@@ -20,9 +20,13 @@ export class CEP {
   @Column()
   cidade: string;
 
-  @Column()
-  latitude: string;
+  @Column({
+    type: 'float',
+  })
+  latitude: number;
 
-  @Column()
-  longitude: string;
+  @Column({
+    type: 'float',
+  })
+  longitude: number;
 }
