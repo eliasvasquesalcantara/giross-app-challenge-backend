@@ -9,6 +9,7 @@ async function bootstrap() {
     .setTitle('Giross App')
     .setVersion('1.0')
     .addTag('giross')
+    .addBasicAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

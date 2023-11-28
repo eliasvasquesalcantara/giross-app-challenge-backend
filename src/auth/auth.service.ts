@@ -11,7 +11,14 @@ export class AuthService {
     private readonly repository: Repository<User>,
   ) {}
 
-  register(entity: User) {
+  async register(entity: User) {
+    const found = await this.repository.findOne({
+      where: { email: entity.email },
+    });
+
+    if (found != null)
+      throw new HttpException('Usuário já está registrado', 500);
+
     return this.repository.save(entity);
   }
 
@@ -25,7 +32,7 @@ export class AuthService {
     if (entity.email !== found.email || entity.password !== found.password)
       throw new HttpException('Wrong email or password', 500);
 
-    return true;
+    return entity.password;
   }
 
   async tokenMatchesUser(token: string): Promise<boolean> {

@@ -14,7 +14,7 @@ describe('User', () => {
       });
 
       expect(obj.email).toBe('EmailFake');
-
+      expect(obj.decryptedPassword).toBe('PasswordFake');
       expect(obj.password).toBe('senha-encriptografada');
     });
   });
