@@ -13,6 +13,13 @@ $ npm run postgres:up
 $ npm run start
 ```
 
+## Test
+
+```bash
+# unit tests
+$ npm run test
+```
+
 ## Endpoints
 * POST /cep
    * add new CEP record
@@ -77,35 +84,3 @@ O desafio deve ser completado no prazo de 7 (sete) dias, a contar a partir do mo
 #### Observação:
 Em caso de ter uso de API externas, não precisa adicionar suas credenciais, apenas deixe um .env de exemplo e onde nossa equipe pode gerar as credenciais para teste. Só serão aceitas plataformas externas com teste gratuito.
 
-
-
-
-
-
-
-
-
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# Run postgres
-$ npm run postgres:up
-
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-```
