@@ -37,7 +37,7 @@ export class CepService {
 
   async findOneByCEP(CEPNumber: string) {
     const entityFound = await this.repository.findOne({
-      where: { CEPNumber },
+      where: { numeroCEP: CEPNumber },
     });
 
     if (!entityFound)

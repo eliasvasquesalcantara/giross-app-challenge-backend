@@ -4,7 +4,7 @@ import { IsNumberString, IsString } from 'class-validator';
 export class CepDTO {
   @ApiProperty()
   @IsString()
-  CEPNumber: string;
+  numeroCEP: string;
 
   @ApiProperty()
   @IsString()

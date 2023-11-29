@@ -6,7 +6,7 @@ export class CEP {
   id: number;
 
   @Column()
-  CEPNumber: string;
+  numeroCEP: string;
 
   @Column()
   UF: string;

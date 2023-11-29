@@ -1,9 +1,9 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class CEP1700861067775 implements MigrationInterface {
+export class CEP1701171405663 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     queryRunner.query(`INSERT INTO cep 
-    ("CEPNumber", "UF", "logradouro", "bairro", "cidade", "latitude", "longitude") 
+    ("numeroCEP", "UF", "logradouro", "bairro", "cidade", "latitude", "longitude") 
     VALUES 
     ('25635420','RJ','ADELINA BOTELHO BRAZ','ALTO DA SERRA','PETROPOLIS', -22.5112498, -43.1779306),
     ('25635430','RJ','CONSTANTINO CARDOSO','ALTO DA SERRA','PETROPOLIS', -22.5112498, -43.1779306),

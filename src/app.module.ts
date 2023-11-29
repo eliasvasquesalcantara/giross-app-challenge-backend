@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { AuthModule } from './auth/auth.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './auth/entities/user.entity';
-import { CEP1700861067775 } from 'migrations/1700861067775-CEP';
 import { CepModule } from './cep/cep.module';
 import { CEP } from './cep/entities/cep.entity';
+import { CEP1701171405663 } from 'migrations/1701171405663-CEP';
+import { Start1700861067775 } from 'migrations/1700861067775-Start';
+import { Auth1701173916805 } from 'migrations/1701173916805-Auth';
 
 @Module({
   imports: [
@@ -17,8 +19,7 @@ import { CEP } from './cep/entities/cep.entity';
       password: 'dbpassword',
       database: 'dbpostgres',
       entities: [CEP, User],
-      // synchronize: true,
-      migrations: [CEP1700861067775],
+      migrations: [Start1700861067775, CEP1701171405663, Auth1701173916805],
       migrationsTableName: 'migrations',
       migrationsRun: true,
     }),
