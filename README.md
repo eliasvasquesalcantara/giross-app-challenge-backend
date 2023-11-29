@@ -13,6 +13,19 @@ $ npm run postgres:up
 $ npm run start
 ```
 
+## Endpoints
+* POST /cep
+   * add new CEP record
+* GET /cep
+   * find CEPs (receives radius (Km) and CEP (center of the radius))
+* POST auth/register
+   * add User record
+* POST auth/login
+   * check User credentials
+* GET auth/is-token-valid/:token
+   * check if basic token is valid
+
+
 # Challenge desription
 ### Desafio do Sistema de Consulta de CEPs
 
